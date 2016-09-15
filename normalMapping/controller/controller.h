@@ -13,5 +13,6 @@ public:
 	int onPaint(const core::eventInfo& e) override;
 
 	void drawScene();
+	void initGL();
 	static inline void invalidate() { repaint = 1; }
 };

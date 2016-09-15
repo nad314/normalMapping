@@ -15,6 +15,8 @@ Controller::Controller(core::Window* ptr, Storage* storage) {
 		mw->resize(data->img.width + 16, data->img.height + 32);
 		mw->centerToMonitor(core::Monitor::MonitorFromId(1));
 	}
+
+	initGL();
 }
 
 Controller::~Controller() {
@@ -31,11 +33,14 @@ int Controller::onPaint(const core::eventInfo& e) {
 void Controller::drawScene() {
 	if (!parent||!repaint)
 		return;
-	glClearColor(0.1f, 0.1f, 0.11f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	GL::drawImage(data->img);
 	GL::swapBuffers(*parent);
 	repaint = 0;
+}
+
+void Controller::initGL() {
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glClearColor(0.1f, 0.1f, 0.11f, 1.0f);
 }

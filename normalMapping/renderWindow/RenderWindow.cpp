@@ -24,6 +24,6 @@ void RenderWindow::onClosing() {
 
 int RenderWindow::onResize(const core::eventInfo& e) {
 	Window::onResize(e);
-	GL::init(*this);
+	GL::ortho(*this);
 	return e;
 }
