@@ -8,7 +8,7 @@ void RenderWindow::onOpening() {
 	setExStyle(WS_EX_TOPMOST);
 	setFlags(0);
 }
-
+ 
 void RenderWindow::onOpened() {
 	Window::onOpened();
 	if (width == 0 || height == 0)
