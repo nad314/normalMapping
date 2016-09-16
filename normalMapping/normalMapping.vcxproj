@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="controller\controller.cpp" />
     <ClCompile Include="gl\glExtensions.cpp" />
+    <ClCompile Include="gl\glShader.cpp" />
     <ClCompile Include="mainWindow\MainWindow.cpp" />
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="program\program.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="controller\controller.h" />
     <ClInclude Include="gl\glExtensions.defines.h" />
     <ClInclude Include="gl\glExtensions.h" />
+    <ClInclude Include="gl\glShader.h" />
     <ClInclude Include="mainWindow\MainWindow.h" />
     <ClInclude Include="main\main.h" />
     <ClInclude Include="program\program.h" />

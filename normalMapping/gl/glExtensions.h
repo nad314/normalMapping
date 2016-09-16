@@ -67,8 +67,8 @@ namespace core {
 			static GLhandleARB(APIENTRY* createProgramObject) ();
 			static GLhandleARB(APIENTRY* createShaderObject) (GLenum shaderType);
 			static void (APIENTRY* activeTexture) (GLenum texture);
-			static GLint(APIENTRY* getUniformLocation) (GLhandleARB program, const GLcharARB *name);
-			static GLint(APIENTRY* getAttribLocation) (GLhandleARB program, const GLcharARB *name);
+			static GLint (APIENTRY* getUniformLocation) (GLhandleARB program, const GLcharARB *name);
+			static GLint (APIENTRY* getAttribLocation) (GLhandleARB program, const GLcharARB *name);
 			static void (APIENTRY* getShaderInfoLog) (GLuint shader, GLsizei maxLength, GLsizei *length, GLcharARB *infoLog);
 			static void (APIENTRY* bindFragDataLocation) (GLuint program, GLuint colorNumber, const char *name);
 			static void (APIENTRY* uniform1i) (GLint location, GLint v0);
@@ -80,6 +80,9 @@ namespace core {
 			static void (APIENTRY* uniform4iv) (GLint location, int count, GLint *v0);
 			static void (APIENTRY* uniform3fv) (GLint location, int count, GLfloat *v0);
 			static void (APIENTRY* uniform2fv) (GLint location, int count, GLfloat* v0);
+			static GLboolean (APIENTRY* isProgram) (GLuint program);
+			static GLboolean (APIENTRY* isShader) (GLuint shader);
+
 
 			//compute
 			static void (APIENTRY* dispatchCompute) (GLuint num_groups_x, GLuint num_groups_y, GLuint num_groups_z);

@@ -69,6 +69,8 @@ namespace core {
 		void (APIENTRY* glExt::uniform4iv) (GLint location, int count, GLint *v0);
 		void (APIENTRY* glExt::uniform3fv) (GLint location, int count, GLfloat *v0);
 		void (APIENTRY* glExt::uniform2fv) (GLint location, int count, GLfloat* v0);
+		GLboolean (APIENTRY* glExt::isProgram) (GLuint program);
+		GLboolean (APIENTRY* glExt::isShader) (GLuint shader);
 
 		//compute
 		void (APIENTRY* glExt::dispatchCompute) (GLuint num_groups_x, GLuint num_groups_y, GLuint num_groups_z);
@@ -161,6 +163,8 @@ namespace core {
 			uniform3fv = (decltype(uniform3fv))get("glUniform3fv");
 			uniform2fv = (decltype(uniform2fv))get("glUniform2fv");
 			uniform4iv = (decltype(uniform4iv))get("glUniform4iv");
+			isProgram = (decltype(isProgram))get("glIsProgram");
+			isShader = (decltype(isShader))get("glIsShader");
 
 			//compute
 			dispatchCompute = (decltype(dispatchCompute))get("glDispatchCompute");
