@@ -12,6 +12,8 @@ namespace core {
 		~glShader() { dispose(); }
 		void dispose();
 		bool load(const char* vertexPath, const char* fragmentPath, const char* fragName);
+		inline void start() { glExt::useProgramObject(program); }
+		inline void stop() { glExt::useProgramObject(0); }
 	};
 }
 
