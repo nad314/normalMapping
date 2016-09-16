@@ -14,6 +14,7 @@ int Program::onStart() {
 	core::Debug::enable();
 	if (!wnd.open())
 		return 1;
+	GL::setVsync(0);
 	glExt::init();
 	if (glExt::error.count() > 0) {
 		core::Debug::print("Error in glExt::init()\n");
@@ -40,10 +41,10 @@ int Program::onStop() {
 int Program::main() {
 	bool done(0);
 	while (!done) {
-		if (wnd.peekMessageAsync(done))
+		if (wnd.peekMessageAsync(done) || wnd.renderWindow.peekMessage())
 			continue;
-		controller->invalidate();
 		controller->drawScene();
+		Sleep(5);
 	}
 	return 0;
 }

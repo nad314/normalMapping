@@ -36,8 +36,6 @@ namespace core {
 		delete[] v;
 		delete[] f;
 
-		Debug::print("Shader Error: %d\n", glGetError());
-
 		return 1;
 	}
 

@@ -2,7 +2,7 @@
 
 void MainWindow::onOpening() {
 	WindowForm::onOpening();
-	setTitle("Core Material Preview");
+	setTitle("Material Preview");
 	setClass("CoreMaterialPreview");
 	setFlags(glw_hidden);
 }

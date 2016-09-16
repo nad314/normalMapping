@@ -14,8 +14,8 @@ out vdata {
 } vOut;
 
 void main(void) {
-	vOut.pos = pos;
-	vOut.nor = nor;
+	vOut.pos = (modelview*vec4(pos, 1.0)).xyz;
+	vOut.nor = normalize(mat3(modelview)*nor);
 	vOut.tex = tex;
 	gl_Position = projection*modelview*vec4(pos.xyz, 1.0);
 }

@@ -16,6 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\build\data\fragment.glsl" />
+    <None Include="..\build\data\vertex.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="controller\controller.cpp">
