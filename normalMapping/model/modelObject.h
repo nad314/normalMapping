@@ -24,6 +24,7 @@ namespace core {
 		~glGameModel();
 
 		bool make(GameModel& model, glShader& shader, const char* pos, const char* nor, const char* tex);
-
+		void drawTriangles();
+		void drawQuads();
 	};
 }

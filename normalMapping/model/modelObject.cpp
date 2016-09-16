@@ -47,5 +47,13 @@ namespace core {
 		return 1;
 	}
 
+	void glGameModel::drawTriangles() {
+		glExt::bindVertexArray(vao);
+		glDrawElements(GL_TRIANGLES, ind, GL_UNSIGNED_INT, 0);
+	}
 
+	void glGameModel::drawQuads() {
+		glExt::bindVertexArray(vao);
+		glDrawElements(GL_QUADS, ind, GL_UNSIGNED_INT, 0);
+	}
 }
