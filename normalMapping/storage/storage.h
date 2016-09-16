@@ -2,6 +2,8 @@
 
 struct Storage: public core::SIMD {
 public:
-	core::Image img;
+	core::glView view;
+	core::glGameModel model;
+	core::glShader shader;
 	Storage();
 };

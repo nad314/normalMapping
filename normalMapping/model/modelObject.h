@@ -17,7 +17,7 @@ namespace core {
 
 	class glGameModel {
 	public:
-		GLuint buff[4]; //buffers;
+		GLuint buff[4];
 		GLuint vao;
 		int ind;
 		glGameModel() { memset(buff, 0, sizeof(buff)); ind = 0; }

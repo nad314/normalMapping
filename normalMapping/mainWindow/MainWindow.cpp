@@ -2,8 +2,8 @@
 
 void MainWindow::onOpening() {
 	WindowForm::onOpening();
-	setTitle("Core Heightmap Editor");
-	setClass("CoreHeightmapEditor");
+	setTitle("Core Material Preview");
+	setClass("CoreMaterialPreview");
 	setFlags(glw_hidden);
 }
 

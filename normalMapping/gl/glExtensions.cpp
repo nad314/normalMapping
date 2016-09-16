@@ -54,6 +54,7 @@ namespace core {
 		void (APIENTRY* glExt::attachObject) (GLenum program, GLenum shader);
 		void (APIENTRY* glExt::linkProgram) (GLenum program);
 		void (APIENTRY* glExt::useProgramObject) (GLhandleARB object);
+		void (APIENTRY* glExt::useProgram) (GLuint program);
 		glExt::GLhandleARB(APIENTRY* glExt::createProgramObject) ();
 		glExt::GLhandleARB(APIENTRY* glExt::createShaderObject) (GLenum shaderType);
 		void (APIENTRY* glExt::activeTexture) (GLenum texture);
@@ -149,6 +150,7 @@ namespace core {
 			attachObject = (decltype(attachObject))get("glAttachObject");
 			linkProgram = (decltype(linkProgram))get("glLinkProgram");
 			useProgramObject = (decltype(useProgramObject))get("glUseProgramObject");
+			useProgram = (decltype(useProgram))get("glUseProgram");
 			createProgramObject = (decltype(createProgramObject))get("glCreateProgramObject");
 			createShaderObject = (decltype(createShaderObject))get("glCreateShaderObject");
 			activeTexture = (decltype(activeTexture))get("glActiveTexture");

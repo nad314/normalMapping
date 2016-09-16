@@ -2,7 +2,7 @@
 
 namespace core {
 	class glShader {
-	protected:
+	public:
 		GLuint vertex;
 		GLuint fragment;
 		GLuint program;
@@ -12,9 +12,10 @@ namespace core {
 		~glShader() { dispose(); }
 		void dispose();
 		bool load(const char* vertexPath, const char* fragmentPath, const char* fragName);
-		inline void start() { glExt::useProgramObject(program); }
-		inline void stop() { glExt::useProgramObject(0); }
-		inline operator GLuint() { return program; }
+		inline void start() { glExt::useProgram(program); }
+		inline void stop() { glExt::useProgram(0); }
+		inline operator GLint() { return program; }
+		void printDebugInfo();
 	};
 }
 

@@ -65,6 +65,7 @@ namespace core {
 			static void (APIENTRY* attachObject) (GLenum program, GLenum shader);
 			static void (APIENTRY* linkProgram) (GLenum program);
 			static void (APIENTRY* useProgramObject) (GLhandleARB object);
+			static void (APIENTRY* useProgram) (GLuint program);
 			static GLhandleARB(APIENTRY* createProgramObject) ();
 			static GLhandleARB(APIENTRY* createShaderObject) (GLenum shaderType);
 			static void (APIENTRY* activeTexture) (GLenum texture);
