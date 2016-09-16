@@ -38,6 +38,7 @@ namespace core {
 			static void (APIENTRY* deleteVertexArrays) (GLsizei n, GLuint *arrays);
 			static void (APIENTRY* enableVertexAttribArray) (GLuint index);
 			static void (APIENTRY* vertexAttribPointer) (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer);
+			static GLboolean(APIENTRY* isVertexArray) (GLuint array);
 
 			//framebuffers
 			static void (APIENTRY* genFramebuffers) (GLsizei n, GLuint *framebuffers);

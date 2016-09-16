@@ -130,21 +130,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="controller\controller.cpp" />
+    <ClCompile Include="cube\cube.cpp" />
     <ClCompile Include="gl\glExtensions.cpp" />
     <ClCompile Include="gl\glShader.cpp" />
     <ClCompile Include="mainWindow\MainWindow.cpp" />
     <ClCompile Include="main\main.cpp" />
+    <ClCompile Include="model\modelObject.cpp" />
     <ClCompile Include="program\program.cpp" />
     <ClCompile Include="renderWindow\RenderWindow.cpp" />
     <ClCompile Include="storage\storage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller\controller.h" />
+    <ClInclude Include="cube\cube.h" />
     <ClInclude Include="gl\glExtensions.defines.h" />
     <ClInclude Include="gl\glExtensions.h" />
     <ClInclude Include="gl\glShader.h" />
     <ClInclude Include="mainWindow\MainWindow.h" />
     <ClInclude Include="main\main.h" />
+    <ClInclude Include="model\modelObject.h" />
     <ClInclude Include="program\program.h" />
     <ClInclude Include="renderWindow\RenderWindow.h" />
     <ClInclude Include="storage\storage.h" />

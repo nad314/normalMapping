@@ -27,6 +27,7 @@ namespace core {
 		void (APIENTRY* glExt::deleteVertexArrays) (GLsizei n, GLuint *arrays);
 		void (APIENTRY* glExt::enableVertexAttribArray) (GLuint index);
 		void (APIENTRY* glExt::vertexAttribPointer) (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer);
+		GLboolean (APIENTRY* glExt::isVertexArray) (GLuint array);
 
 		//framebuffers
 		void (APIENTRY* glExt::genFramebuffers) (GLsizei n, GLuint *framebuffers);
@@ -121,6 +122,7 @@ namespace core {
 			deleteVertexArrays = (decltype(deleteVertexArrays))get("glDeleteVertexArrays");
 			enableVertexAttribArray = (decltype(enableVertexAttribArray))get("glEnableVertexAttribArray");
 			vertexAttribPointer = (decltype(vertexAttribPointer))get("glVertexAttribPointer");
+			isVertexArray = (decltype(isVertexArray))get("glIsVertexArray");
 
 			//framebuffers
 			genFramebuffers = (decltype(genFramebuffers))get("glGenFramebuffersEXT");

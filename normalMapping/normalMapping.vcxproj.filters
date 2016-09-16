@@ -42,6 +42,12 @@
     <ClCompile Include="gl\glShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cube\cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model\modelObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller\controller.h">
@@ -69,6 +75,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gl\glShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cube\cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model\modelObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

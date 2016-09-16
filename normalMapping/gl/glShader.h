@@ -14,6 +14,7 @@ namespace core {
 		bool load(const char* vertexPath, const char* fragmentPath, const char* fragName);
 		inline void start() { glExt::useProgramObject(program); }
 		inline void stop() { glExt::useProgramObject(0); }
+		inline operator GLuint() { return program; }
 	};
 }
 
