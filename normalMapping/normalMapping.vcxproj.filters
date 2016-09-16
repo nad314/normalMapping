@@ -51,6 +51,9 @@
     <ClCompile Include="view\view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="view\glview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller\controller.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="view\view.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="view\glview.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

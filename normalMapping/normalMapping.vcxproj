@@ -139,6 +139,7 @@
     <ClCompile Include="program\program.cpp" />
     <ClCompile Include="renderWindow\RenderWindow.cpp" />
     <ClCompile Include="storage\storage.cpp" />
+    <ClCompile Include="view\glview.cpp" />
     <ClCompile Include="view\view.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="program\program.h" />
     <ClInclude Include="renderWindow\RenderWindow.h" />
     <ClInclude Include="storage\storage.h" />
+    <ClInclude Include="view\glview.h" />
     <ClInclude Include="view\view.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

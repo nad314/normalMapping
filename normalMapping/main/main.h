@@ -8,6 +8,7 @@ using namespace core::opengl;
 #include <gl/glExtensions.h>
 #include <gl/glShader.h>
 #include <model/modelObject.h>
+#include <view/glview.h>
 
 //models
 #include <cube/cube.h>
