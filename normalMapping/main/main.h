@@ -4,6 +4,7 @@
 using namespace core::opengl;
 
 //core
+#include <view/view.h>
 #include <gl/glExtensions.h>
 #include <gl/glShader.h>
 #include <model/modelObject.h>

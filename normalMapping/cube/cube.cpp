@@ -68,6 +68,6 @@ void Cube::make(const float& r) {
 		texcoord.push_back(core::vec2(0, 1));
 	}
 
-	for (int i = 0; i < 24; ++i)
+	for (int i=0;i<24;++i)
 		indices.push_back(i);
 }
