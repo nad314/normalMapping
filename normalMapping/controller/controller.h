@@ -3,7 +3,7 @@
 class Controller : public core::EventListener {
 protected:
 	core::Window* parent;
-	Storage* data;
+	Storage* lpdata;
 	static bool repaint;
 	core::vec2i mpos;
 	bool dragging;

@@ -27,7 +27,7 @@ namespace core {
 		index = glExt::getAttribLocation(shader.program, pos);
 		glExt::enableVertexAttribArray(index);
 		glExt::vertexAttribPointer(index, 3, GL_FLOAT, false, 0, 0);
-		
+
 		glExt::bindBuffer(GL_ARRAY_BUFFER, buff[1]);
 		glExt::bufferData(GL_ARRAY_BUFFER, mesh.normal.count() * sizeof(vec3), mesh.normal, GL_STATIC_DRAW);
 		index = glExt::getAttribLocation(shader.program, nor);
@@ -49,7 +49,7 @@ namespace core {
 		return 1;
 	}
 
-	void glGameMesh::drawTriangles() {
+	void glGameMesh::drawTris() {
 		glExt::bindVertexArray(vao);
 		glDrawElements(GL_TRIANGLES, ind, GL_UNSIGNED_INT, 0);
 	}

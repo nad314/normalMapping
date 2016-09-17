@@ -47,13 +47,19 @@
     <ClCompile Include="cube\cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="model\modelObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="view\view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="view\glview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="controller\controller.events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\gameMesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh\glGameMesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,13 +94,16 @@
     <ClInclude Include="cube\cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="model\modelObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="view\view.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="view\glview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\gameMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh\glGameMesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

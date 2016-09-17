@@ -1,14 +1,6 @@
 #pragma once
 
 namespace core {
-	class GameMesh {
-	public:
-		buffer<vec3> position;
-		buffer<vec3> normal;
-		buffer<vec2> texcoord;
-		buffer<int> indices;
-	};
-
 	class glGameMesh {
 	public:
 		GLuint buff[4];
@@ -18,7 +10,7 @@ namespace core {
 		~glGameMesh();
 
 		bool make(GameMesh& mesh, glShader& shader, const char* pos, const char* nor, const char* tex);
-		void drawTriangles();
+		void drawTris();
 		void drawQuads();
 	};
 }

@@ -7,7 +7,8 @@ using namespace core::opengl;
 #include <view/view.h>
 #include <gl/glExtensions.h>
 #include <gl/glShader.h>
-#include <model/modelObject.h>
+#include <mesh/gameMesh.h>
+#include <mesh/glGameMesh.h>
 #include <view/glview.h>
 
 //models

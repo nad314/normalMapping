@@ -132,12 +132,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="controller\controller.cpp" />
+    <ClCompile Include="controller\controller.events.cpp" />
     <ClCompile Include="cube\cube.cpp" />
     <ClCompile Include="gl\glExtensions.cpp" />
     <ClCompile Include="gl\glShader.cpp" />
     <ClCompile Include="mainWindow\MainWindow.cpp" />
     <ClCompile Include="main\main.cpp" />
-    <ClCompile Include="model\modelObject.cpp" />
+    <ClCompile Include="mesh\gameMesh.cpp" />
+    <ClCompile Include="mesh\glGameMesh.cpp" />
     <ClCompile Include="program\program.cpp" />
     <ClCompile Include="renderWindow\RenderWindow.cpp" />
     <ClCompile Include="storage\storage.cpp" />
@@ -152,7 +154,8 @@
     <ClInclude Include="gl\glShader.h" />
     <ClInclude Include="mainWindow\MainWindow.h" />
     <ClInclude Include="main\main.h" />
-    <ClInclude Include="model\modelObject.h" />
+    <ClInclude Include="mesh\gameMesh.h" />
+    <ClInclude Include="mesh\glGameMesh.h" />
     <ClInclude Include="program\program.h" />
     <ClInclude Include="renderWindow\RenderWindow.h" />
     <ClInclude Include="storage\storage.h" />
