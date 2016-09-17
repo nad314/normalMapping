@@ -3,7 +3,7 @@
 struct Storage: public core::SIMD {
 public:
 	core::glView view;
-	core::glGameModel model;
+	core::glGameMesh model;
 	core::glShader shader;
 	Storage();
 };

@@ -1,13 +1,7 @@
 #pragma once
 
 namespace core {
-	class ModelObject {
-	public:
-		buffer<vec4> position;
-		buffer<int> indices;
-	};
-
-	class GameModel {
+	class GameMesh {
 	public:
 		buffer<vec3> position;
 		buffer<vec3> normal;
@@ -15,15 +9,15 @@ namespace core {
 		buffer<int> indices;
 	};
 
-	class glGameModel {
+	class glGameMesh {
 	public:
 		GLuint buff[4];
 		GLuint vao;
 		int ind;
-		glGameModel() { memset(buff, 0, sizeof(buff)); ind = 0; }
-		~glGameModel();
+		glGameMesh() { memset(buff, 0, sizeof(buff)); ind = 0; }
+		~glGameMesh();
 
-		bool make(GameModel& model, glShader& shader, const char* pos, const char* nor, const char* tex);
+		bool make(GameMesh& mesh, glShader& shader, const char* pos, const char* nor, const char* tex);
 		void drawTriangles();
 		void drawQuads();
 	};

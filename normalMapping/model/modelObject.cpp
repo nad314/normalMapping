@@ -1,7 +1,7 @@
 #include <main/main.h>
 
 namespace core {
-	glGameModel::~glGameModel() {
+	glGameMesh::~glGameMesh() {
 		if (glExt::isBuffer(buff[0]))
 			glExt::deleteBuffers(4, buff);
 		if (glExt::isVertexArray(vao))
@@ -10,11 +10,11 @@ namespace core {
 		ind = 0;
 	}
 
-	bool glGameModel::make(GameModel& model, glShader& shader, const char* pos, const char* nor, const char* tex) {
-		if (model.position.count() < 1 || model.indices.count() < 0)
+	bool glGameMesh::make(GameMesh& mesh, glShader& shader, const char* pos, const char* nor, const char* tex) {
+		if (mesh.position.count() < 1 || mesh.indices.count() < 0)
 			return 0;
 
-		ind = model.indices.count();
+		ind = mesh.indices.count();
 		int index;
 
 		vao = 0;
@@ -23,25 +23,25 @@ namespace core {
 		glExt::bindVertexArray(vao);
 
 		glExt::bindBuffer(GL_ARRAY_BUFFER, buff[0]);
-		glExt::bufferData(GL_ARRAY_BUFFER, model.position.count() * sizeof(vec3), model.position, GL_STATIC_DRAW);
+		glExt::bufferData(GL_ARRAY_BUFFER, mesh.position.count() * sizeof(vec3), mesh.position, GL_STATIC_DRAW);
 		index = glExt::getAttribLocation(shader.program, pos);
 		glExt::enableVertexAttribArray(index);
 		glExt::vertexAttribPointer(index, 3, GL_FLOAT, false, 0, 0);
 		
 		glExt::bindBuffer(GL_ARRAY_BUFFER, buff[1]);
-		glExt::bufferData(GL_ARRAY_BUFFER, model.normal.count() * sizeof(vec3), model.normal, GL_STATIC_DRAW);
+		glExt::bufferData(GL_ARRAY_BUFFER, mesh.normal.count() * sizeof(vec3), mesh.normal, GL_STATIC_DRAW);
 		index = glExt::getAttribLocation(shader.program, nor);
 		glExt::enableVertexAttribArray(index);
 		glExt::vertexAttribPointer(index, 3, GL_FLOAT, false, 0, 0);
 
 		glExt::bindBuffer(GL_ARRAY_BUFFER, buff[2]);
-		glExt::bufferData(GL_ARRAY_BUFFER, model.texcoord.count() * sizeof(vec2), model.texcoord, GL_STATIC_DRAW);
+		glExt::bufferData(GL_ARRAY_BUFFER, mesh.texcoord.count() * sizeof(vec2), mesh.texcoord, GL_STATIC_DRAW);
 		index = glExt::getAttribLocation(shader.program, tex);
 		glExt::enableVertexAttribArray(index);
 		glExt::vertexAttribPointer(index, 2, GL_FLOAT, false, 0, 0);
 
 		glExt::bindBuffer(GL_ELEMENT_ARRAY_BUFFER, buff[3]);
-		glExt::bufferData(GL_ELEMENT_ARRAY_BUFFER, model.indices.count() * sizeof(int), model.indices, GL_STATIC_DRAW);
+		glExt::bufferData(GL_ELEMENT_ARRAY_BUFFER, mesh.indices.count() * sizeof(int), mesh.indices, GL_STATIC_DRAW);
 
 		glExt::bindVertexArray(0);
 
@@ -49,14 +49,13 @@ namespace core {
 		return 1;
 	}
 
-	void glGameModel::drawTriangles() {
+	void glGameMesh::drawTriangles() {
 		glExt::bindVertexArray(vao);
 		glDrawElements(GL_TRIANGLES, ind, GL_UNSIGNED_INT, 0);
 	}
 
-	void glGameModel::drawQuads() {
+	void glGameMesh::drawQuads() {
 		glExt::bindVertexArray(vao);
-		glDrawArrays(GL_QUADS, 0, ind);
-		//glDrawElements(GL_QUADS, ind, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_QUADS, ind, GL_UNSIGNED_INT, 0);
 	}
 }
