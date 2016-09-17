@@ -51,6 +51,10 @@ namespace core {
 		for (i = 0; i < tangents.count(); ++i) {
 			tangents[i].normalize();
 			bitangents[i].normalize();
+			float f = (vector::dot(vector::cross(normal[i], tangents[i]), bitangents[i])<0.0f) ? -1.0f : 1.0f;
+
+			tangents[i] = (normal[i] * vector::dot(normal[i], tangents[i]) - tangents[i]).normalize()*f;
+			//bitangents[i] = (vector::cross(normal[indices[i]], tangents[i])*f).normalize();
 		}
 
 	}

@@ -136,6 +136,7 @@
     <ClCompile Include="cube\cube.cpp" />
     <ClCompile Include="gl\glExtensions.cpp" />
     <ClCompile Include="gl\glShader.cpp" />
+    <ClCompile Include="gl\glTexture.cpp" />
     <ClCompile Include="mainWindow\MainWindow.cpp" />
     <ClCompile Include="main\main.cpp" />
     <ClCompile Include="mesh\gameMesh.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="gl\glExtensions.defines.h" />
     <ClInclude Include="gl\glExtensions.h" />
     <ClInclude Include="gl\glShader.h" />
+    <ClInclude Include="gl\glTexture.h" />
     <ClInclude Include="mainWindow\MainWindow.h" />
     <ClInclude Include="main\main.h" />
     <ClInclude Include="mesh\gameMesh.h" />

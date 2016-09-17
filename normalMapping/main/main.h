@@ -10,6 +10,7 @@ using namespace core::opengl;
 #include <mesh/gameMesh.h>
 #include <mesh/glGameMesh.h>
 #include <view/glview.h>
+#include <gl/glTexture.h>
 
 //models
 #include <cube/cube.h>

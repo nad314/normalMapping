@@ -35,9 +35,16 @@ void Controller::drawScene() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	data.shader.start();
+	glExt::activeTexture(GL_TEXTURE0);
+	data.diffuse.bind();
+	glExt::activeTexture(GL_TEXTURE1);
+	data.normal.bind();
 	data.view.sendTo(data.shader, "modelview", "projection");
+	glExt::uniform1i(glExt::getUniformLocation(data.shader, "diffuseMap"), 0);
+	glExt::uniform1i(glExt::getUniformLocation(data.shader, "normalMap"), 1);
 	data.model.drawTris();
 	data.shader.stop();
+	core::glTexture::unbind();
 	glDisable(GL_DEPTH_TEST);
 	GL::swapBuffers(*parent);
 	repaint = 0;
@@ -45,6 +52,8 @@ void Controller::drawScene() {
 
 void Controller::initGL() {
 	glEnable(GL_BLEND);
+	glEnable(GL_TEXTURE0);
+	glEnable(GL_TEXTURE1);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glClearColor(0.1f, 0.1f, 0.11f, 1.0f);
 }
