@@ -8,6 +8,7 @@ public:
 	void onOpening() override;
 	void onOpened() override;
 
+	void onStartPaint(const core::eventInfo& e) override;
 	void onEndPaint(const core::eventInfo& e) override;
 	void print(const char* s) override;
 };

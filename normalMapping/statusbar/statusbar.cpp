@@ -15,6 +15,11 @@ void Statusbar::onOpened() {
 	setBackColor(App::Theme::FormBackColor);
 }
 
+void Statusbar::onStartPaint(const core::eventInfo& e) {
+	__invalidate();
+	Form::onStartPaint(e);
+}
+
 void Statusbar::onEndPaint(const core::eventInfo& e) {
 	Form::onEndPaint(e);
 	core::Font::get().print(text, *this, 4, 4);
