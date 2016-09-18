@@ -4,8 +4,7 @@ void RenderWindow::onOpening() {
 	Window::onOpening();
 	setTitle("Render Form");
 	setClass("RenderForm");
-	setStyle(WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS);
-	setExStyle(WS_EX_TOPMOST);
+	setStyle(WS_CHILD | WS_VISIBLE);
 	setFlags(0);
 }
  

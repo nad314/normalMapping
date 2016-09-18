@@ -41,7 +41,7 @@ int Program::onStop() {
 int Program::main() {
 	bool done(0);
 	while (!done) {
-		if (wnd.peekMessageAsync(done) || wnd.renderWindow.peekMessage())
+		if (wnd.peekMessageAsync(done))
 			continue;
 		controller->drawScene();
 		Sleep(5);

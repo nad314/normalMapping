@@ -10,4 +10,5 @@ public:
 	int onResize(const core::eventInfo& e) override;
 	void onEndPaint(const core::eventInfo& e) override;
 	void reshape();
+
 };

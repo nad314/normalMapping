@@ -9,11 +9,13 @@ int Controller::onResize(const core::eventInfo& e) {
 
 int Controller::onLButtonDown(const core::eventInfo& e) {
 	dragging = 1;
+	SetCapture(*parent);
 	return EventListener::onLButtonDown(e);
 }
 
 int Controller::onLButtonUp(const core::eventInfo& e) {
 	dragging = 0;
+	ReleaseCapture();
 	return EventListener::onLButtonUp(e);
 }
 

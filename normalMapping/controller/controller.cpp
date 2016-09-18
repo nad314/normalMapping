@@ -14,8 +14,8 @@ Controller::Controller(core::Window* ptr, Storage* storage) {
 
 	initGL();
 	rotation.init();
-	rotation.rotate(20.0f, 1.0f, 0.0f, 0.0f);
-	rotation.rotate(-30.0f, 0.0f, 1.0f, 0.0f);
+	rotation.rotate(15.0f, 1.0f, 0.0f, 0.0f);
+	rotation.rotate(-20.0f, 0.0f, 1.0f, 0.0f);
 	translation.init();
 	translation.translate(0.0f, 0.0f, -6.0f);
 	lpdata->view.perspective(*parent, 41.5f, 0.1f, 100.0f);
