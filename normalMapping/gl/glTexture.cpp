@@ -14,6 +14,7 @@ namespace core {
 	bool glTexture::make(Image& img) {
 		if (img.width == 0 || img.height == 0)
 			return 0;
+		dispose();
 		glBindTexture(GL_TEXTURE_2D, 0);
 		glGenTextures(1, &t);
 		glBindTexture(GL_TEXTURE_2D, t);

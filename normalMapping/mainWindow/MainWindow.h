@@ -2,6 +2,8 @@
 class MainWindow final : public core::WindowForm {
 public:
 	RenderWindow renderWindow;
+	Sidebar sidebar;
+	Statusbar statusbar;
 public:
 	void onOpening() override;
 	void onClosing() override;

@@ -143,7 +143,10 @@
     <ClCompile Include="mesh\glGameMesh.cpp" />
     <ClCompile Include="program\program.cpp" />
     <ClCompile Include="renderWindow\RenderWindow.cpp" />
+    <ClCompile Include="sidebar\sidebar.cpp" />
+    <ClCompile Include="statusbar\statusbar.cpp" />
     <ClCompile Include="storage\storage.cpp" />
+    <ClCompile Include="theme\apptheme.cpp" />
     <ClCompile Include="view\glview.cpp" />
     <ClCompile Include="view\view.cpp" />
   </ItemGroup>
@@ -160,7 +163,10 @@
     <ClInclude Include="mesh\glGameMesh.h" />
     <ClInclude Include="program\program.h" />
     <ClInclude Include="renderWindow\RenderWindow.h" />
+    <ClInclude Include="sidebar\sidebar.h" />
+    <ClInclude Include="statusbar\statusbar.h" />
     <ClInclude Include="storage\storage.h" />
+    <ClInclude Include="theme\apptheme.h" />
     <ClInclude Include="view\glview.h" />
     <ClInclude Include="view\view.h" />
   </ItemGroup>

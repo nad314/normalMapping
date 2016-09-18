@@ -15,6 +15,9 @@ using namespace core::opengl;
 //models
 #include <cube/cube.h>
 
+#include <theme/apptheme.h>
+#include <sidebar/sidebar.h>
+#include <statusbar/statusbar.h>
 #include <renderWindow/RenderWindow.h>
 #include <mainWindow/MainWindow.h>
 
