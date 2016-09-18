@@ -36,8 +36,8 @@ int MainWindow::onResize(const core::eventInfo& e) {
 
 void MainWindow::reshape() {
 	//MoveWindow(renderWindow.hWnd, 6, 40, width - 12, height - 46, false);
-	SetWindowPos(renderWindow, NULL, 8, 40, width - 16 - 256, height - 46 - 24, SWP_NOCOPYBITS|SWP_DEFERERASE|SWP_NOSENDCHANGING);
-	SetWindowPos(sidebar, NULL, width - 256, 40, 256 - 8, height - 46 - 24, SWP_NOCOPYBITS | SWP_DEFERERASE | SWP_NOSENDCHANGING);
+	SetWindowPos(renderWindow, NULL, 8, 40, width - 16 - App::Theme::sidebarWidth, height - 46 - 24, SWP_NOCOPYBITS|SWP_DEFERERASE|SWP_NOSENDCHANGING);
+	SetWindowPos(sidebar, NULL, width - App::Theme::sidebarWidth, 40, App::Theme::sidebarWidth - 8, height - 46 - 24, SWP_NOCOPYBITS | SWP_DEFERERASE | SWP_NOSENDCHANGING);
 	SetWindowPos(statusbar, NULL, 4, height-24, width - 8, 20, SWP_NOCOPYBITS | SWP_DEFERERASE | SWP_NOSENDCHANGING);
 }
 

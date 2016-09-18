@@ -7,6 +7,7 @@ void Statusbar::onOpening() {
 	setBackColor(core::Theme::controlBackColor);
 	setControlColors();
 	setClass("MaterialPreviewStatusbar");
+	memset(text, 0, 256);
 }
 
 void Statusbar::onOpened() {
@@ -16,5 +17,14 @@ void Statusbar::onOpened() {
 
 void Statusbar::onEndPaint(const core::eventInfo& e) {
 	Form::onEndPaint(e);
-	core::Font::get().print("Statusbar ready.", *this, 4, 4);
+	core::Font::get().print(text, *this, 4, 4);
+}
+
+void Statusbar::print(const char* s) {
+	strcpy(text, s);
+	int n = strlen(text);
+	for (int i = 0; i < n; ++i)
+		if (text[i] == '\n')
+			text[i] = ' ';
+	invalidate();
 }

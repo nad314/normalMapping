@@ -1,5 +1,6 @@
 #include <main/main.h>
 
 namespace App {
-	core::Color Theme::FormBackColor(35, 35, 38, 255);
+	int Theme::sidebarWidth = 192;
+	core::Color Theme::FormBackColor(32, 32, 35, 255);
 }

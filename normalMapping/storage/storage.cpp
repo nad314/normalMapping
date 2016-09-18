@@ -14,4 +14,5 @@ Storage::Storage() {
 	if (!normal.loadPng("dirt_normal.png"))
 		core::Debug::print("Couldn't load normal map\n");
 	core::Path::popDir();
+	//core::Debug::print("Files Loaded.");
 }

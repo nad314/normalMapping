@@ -10,7 +10,6 @@ in matdata {
 	vec3 nor;
 } matIn;
 
-
 out vec4 fragColor;
 
 uniform sampler2D diffuseMap;
