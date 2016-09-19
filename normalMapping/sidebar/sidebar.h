@@ -9,6 +9,7 @@ public:
 	core::ImageButton difButton; //diffuse texture load
 	core::ImageButton norButton; //normal texture load
 	core::ImageButton relButton; //reload textures
+	core::Button clearButton;
 
 	char difPath[256];
 	char norPath[256];

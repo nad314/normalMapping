@@ -42,6 +42,19 @@ void Sidebar::onOpened() {
 		p.loadNorImage(p.norPath);
 	}));
 
+	push(clearButton.make(core::vec4i(2, bsize + 4, App::Theme::sidebarWidth - 10, bsize + 24), "Clear All", *this, [](core::Form& f)->void {
+		Sidebar& p = dynamic_cast<Sidebar&>(f);
+		if (!p) return;
+		Controller::get().clearTextures();
+		Controller::get().invalidate();
+		p.loadImages();
+		p.difButton.setImage(&p.difImage);
+		p.norButton.setImage(&p.norImage);
+		p.relButton.setImage(&p.relImage);
+		p.invalidate();
+		core::Debug::print("Cleared Images\n");
+	}));
+
 	setControlColors();
 }
 

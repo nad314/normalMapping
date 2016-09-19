@@ -66,7 +66,7 @@ void Controller::clearTextures() {
 	if (!lpdata) return;
 	Storage& data = *lpdata;
 	core::Image img;
-	img.make(512, 512, 32);
+	img.make(128, 128, 32);
 	core::Core2D::clearImage(img, core::Color(255));
 	data.diffuse.make(img);
 	core::Core2D::clearImage(img, core::Color(128, 128, 255, 255));
@@ -74,6 +74,7 @@ void Controller::clearTextures() {
 }
 
 void Controller::makeImage(core::glTexture& texture, core::Image& image) {
+	texture.dispose();
 	texture.make(image);
 	texture.genMipmaps();
 }

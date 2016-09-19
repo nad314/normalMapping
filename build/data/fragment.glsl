@@ -16,7 +16,7 @@ uniform sampler2D diffuseMap;
 uniform sampler2D normalMap;
 
 void main(void) {
-	vec3 lightDir = normalize(vec3(0.25f, 0.5f, -3.0f)-vIn.pos.xyz);
+	vec3 lightDir = normalize(vec3(0.5f, 0.5f, -3.0f)-vIn.pos.xyz);
 	mat3 tsm = mat3(normalize(matIn.tan), normalize(matIn.btan), normalize(matIn.nor));
 	vec3 color = texture2D(diffuseMap, vIn.tex).xyz;
 	vec3 normal = texture2D(normalMap, vIn.tex).xyz*2.0 - 1.0;
