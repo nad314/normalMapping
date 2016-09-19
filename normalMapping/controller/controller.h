@@ -2,6 +2,8 @@
 
 class Controller : public core::EventListener {
 protected:
+	static Controller* defController;
+
 	core::Window* parent;
 	Storage* lpdata;
 	static bool repaint;
@@ -11,7 +13,7 @@ protected:
 	core::matrixf rotation, translation;
 
 public:
-	Controller() : EventListener(), parent(NULL) {}
+	Controller() : EventListener(), parent(NULL) { defController = this; }
 	Controller(core::Window* prt, Storage* storage);
 	~Controller();
 
@@ -24,4 +26,6 @@ public:
 	void drawScene();
 	void initGL();
 	static inline void invalidate() { repaint = 1; }
+	inline static Controller& get() { return *defController; }
+	inline Storage& storage() { return *lpdata; }
 };

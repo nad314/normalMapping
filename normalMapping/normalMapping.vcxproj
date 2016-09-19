@@ -144,6 +144,7 @@
     <ClCompile Include="program\program.cpp" />
     <ClCompile Include="renderWindow\RenderWindow.cpp" />
     <ClCompile Include="sidebar\sidebar.cpp" />
+    <ClCompile Include="sidebar\sidebar.images.cpp" />
     <ClCompile Include="statusbar\statusbar.cpp" />
     <ClCompile Include="storage\storage.cpp" />
     <ClCompile Include="theme\apptheme.cpp" />

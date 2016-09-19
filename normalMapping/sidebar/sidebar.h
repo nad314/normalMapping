@@ -13,6 +13,7 @@ public:
 	void onOpening() override;
 	void onOpened() override;
 	void loadImages();
+	void adjustImage(core::Image& source, const core::Image& dest);
 
 	void onEndPaint(const core::eventInfo& e) override;
 };

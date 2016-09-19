@@ -1,8 +1,10 @@
 #include <main\main.h>
 
+Controller* Controller::defController = NULL;
 bool Controller::repaint = 0;
 
 Controller::Controller(core::Window* ptr, Storage* storage) {
+	defController = this;
 	parent = ptr;
 	parent->attach(this);
 	lpdata = storage;
