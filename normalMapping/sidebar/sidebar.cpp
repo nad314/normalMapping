@@ -20,15 +20,7 @@ void Sidebar::onOpened() {
 		core::Debug::print("Loading Diffuse Texture...\n");
 		core::Path::pushDir();
 		std::string path = core::Path::getOpenFileName("Image\0*.png\0\0");
-		if (!p.difImage.loadPng(path.c_str()))
-			core::Debug::print("Couldn't load image\n");
-		else {
-			Controller::get().storage().diffuse.make(p.difImage);
-			Controller::get().invalidate();
-			p.adjustImage(p.difImage, p.difImage);
-			p.difButton.setImage(&p.difImage);
-			core::Debug::print("Success!\n");
-		}
+		p.loadDifImage(path.c_str());
 		core::Path::popDir();
 	}));
 
@@ -38,20 +30,16 @@ void Sidebar::onOpened() {
 		core::Debug::print("Loading Normal Texture...\n");
 		core::Path::pushDir();
 		std::string path = core::Path::getOpenFileName("Image\0*.png\0\0");
-		if (!p.norImage.loadPng(path.c_str()))
-			core::Debug::print("Couldn't load image\n");
-		else {
-			Controller::get().storage().normal.make(p.norImage);
-			Controller::get().invalidate();
-			p.adjustImage(p.norImage, p.norImage);
-			p.norButton.setImage(&p.norImage);
-			core::Debug::print("Success!\n");
-		}
+		p.loadNorImage(path.c_str());
 		core::Path::popDir();
 	}));
 
 	push(relButton.make(core::vec4i(bsize*2+6, 2, bsize*3+6, bsize+2), &relImage, *this, [](core::Form& f)->void {
 		core::Debug::print("Reloading Textures...\n");
+		Sidebar& p = dynamic_cast<Sidebar&>(f);
+		if (!p) return;
+		p.loadDifImage(p.difPath);
+		p.loadNorImage(p.norPath);
 	}));
 
 	setControlColors();

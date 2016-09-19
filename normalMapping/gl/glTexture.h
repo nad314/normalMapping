@@ -14,6 +14,7 @@ namespace core {
 		void dispose();
 		bool make(Image& img);
 		bool loadPng(char* path);
+		void genMipmaps();
 		
 	};
 }

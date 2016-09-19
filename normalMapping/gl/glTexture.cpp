@@ -40,4 +40,12 @@ namespace core {
 			return 0;
 		return make(img);
 	}
+
+	void glTexture::genMipmaps() {
+		bind();
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glExt::generateMipmap(GL_TEXTURE_2D);
+		unbind();
+	}
 }

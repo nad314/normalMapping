@@ -22,6 +22,8 @@ Controller::Controller(core::Window* ptr, Storage* storage) {
 	translation.translate(0.0f, 0.0f, -6.0f);
 	lpdata->view.perspective(*parent, 41.5f, 0.1f, 100.0f);
 	lpdata->view.modelview = rotation*translation;
+
+	clearTextures();
 }
 
 Controller::~Controller() {
@@ -58,4 +60,20 @@ void Controller::initGL() {
 	glEnable(GL_TEXTURE1);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glClearColor(0.1f, 0.1f, 0.11f, 1.0f);
+}
+
+void Controller::clearTextures() {
+	if (!lpdata) return;
+	Storage& data = *lpdata;
+	core::Image img;
+	img.make(512, 512, 32);
+	core::Core2D::clearImage(img, core::Color(255));
+	data.diffuse.make(img);
+	core::Core2D::clearImage(img, core::Color(128, 128, 255, 255));
+	data.normal.make(img);
+}
+
+void Controller::makeImage(core::glTexture& texture, core::Image& image) {
+	texture.make(image);
+	texture.genMipmaps();
 }

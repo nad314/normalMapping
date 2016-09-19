@@ -26,3 +26,29 @@ void Sidebar::adjustImage(core::Image& dest, const core::Image& source) {
 	core::Core2D::drawRect(core::Rect(0, 0, 52, 52), controlBorderColor, dest);
 	core::Core2D::blendImage(core::Rect(border, border, 52- border, 52- border), img, dest);
 }
+
+void Sidebar::loadDifImage(const char* path) {
+	if (!difImage.loadPng(path))
+		core::Debug::print("Couldn't load image\n");
+	else {
+		Controller::get().makeImage(Controller::get().storage().diffuse,difImage);
+		Controller::get().invalidate();
+		adjustImage(difImage, difImage);
+		difButton.setImage(&difImage);
+		core::Debug::print("Loaded: %s\n", path);
+		strcpy(difPath, path);
+	}
+}
+
+void Sidebar::loadNorImage(const char* path) {
+	if (!norImage.loadPng(path))
+		core::Debug::print("Couldn't load image\n");
+	else {
+		Controller::get().makeImage(Controller::get().storage().normal, norImage);
+		Controller::get().invalidate();
+		adjustImage(norImage, norImage);
+		norButton.setImage(&norImage);
+		core::Debug::print("Loaded: %s\n", path);
+		strcpy(norPath, path);
+	}
+}

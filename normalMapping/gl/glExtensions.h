@@ -57,6 +57,7 @@ namespace core {
 			//misc
 			static void (APIENTRY* memoryBarrier) (GLbitfield barriers);
 			static void (APIENTRY* texStorage2D) (GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height);
+			static void (APIENTRY* generateMipmap) (GLuint target);
 
 			//shaders
 			static GLint(APIENTRY* deleteObject) (GLenum object);

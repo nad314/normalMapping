@@ -28,4 +28,7 @@ public:
 	static inline void invalidate() { repaint = 1; }
 	inline static Controller& get() { return *defController; }
 	inline Storage& storage() { return *lpdata; }
+
+	void clearTextures();
+	void makeImage(core::glTexture& texture, core::Image& image);
 };

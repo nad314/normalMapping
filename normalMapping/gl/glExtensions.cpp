@@ -46,6 +46,7 @@ namespace core {
 		//misc
 		void (APIENTRY* glExt::memoryBarrier) (GLbitfield barriers);
 		void (APIENTRY* glExt::texStorage2D) (GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height);
+		void (APIENTRY* glExt::generateMipmap) (GLuint target);
 
 		//shaders
 		GLint(APIENTRY* glExt::deleteObject) (GLenum object);
@@ -142,6 +143,7 @@ namespace core {
 			//misc
 			memoryBarrier = (decltype(memoryBarrier))get("glMemoryBarrier");
 			texStorage2D = (decltype(texStorage2D))get("glTexStorage2D");
+			generateMipmap = (decltype(generateMipmap))get("glGenerateMipmap");
 
 			//shaders
 			deleteObject = (decltype(deleteObject))get("glDeleteObject");
