@@ -1,16 +1,8 @@
 #pragma once
 #include <core>
 #include <core-forms>
+#include <core-game>
 using namespace core::opengl;
-
-//core
-#include <view/view.h>
-#include <gl/glExtensions.h>
-#include <gl/glShader.h>
-#include <mesh/gameMesh.h>
-#include <mesh/glGameMesh.h>
-#include <view/glview.h>
-#include <gl/glTexture.h>
 
 //models
 #include <cube/cube.h>

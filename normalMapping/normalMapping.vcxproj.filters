@@ -38,31 +38,10 @@
     <ClCompile Include="storage\storage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gl\glExtensions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gl\glShader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cube\cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="view\view.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="view\glview.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="controller\controller.events.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mesh\gameMesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mesh\glGameMesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gl\glTexture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sidebar\sidebar.cpp">
@@ -97,31 +76,7 @@
     <ClInclude Include="storage\storage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gl\glExtensions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gl\glExtensions.defines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gl\glShader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cube\cube.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="view\view.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="view\glview.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mesh\gameMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mesh\glGameMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gl\glTexture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sidebar\sidebar.h">
