@@ -11,6 +11,7 @@ public:
 	core::ImageButton relButton; //reload textures
 	core::Button clearButton;
 	core::Slider sizeSlider;
+	core::Button saveButton;
 
 	char difPath[256];
 	char norPath[256];

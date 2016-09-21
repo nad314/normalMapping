@@ -63,6 +63,17 @@ void Sidebar::onOpened() {
 		core::Debug::print("Texture Scale: %.2f\n", scale);
 	}));
 
+	push(saveButton.make(core::vec4i(2, bsize + 52, App::Theme::sidebarWidth - 10, bsize + 72), "Save Material", *this, [](core::Form& f)->void {
+		core::Debug::print("Cleared Images\n");
+		core::Debug::print("Loading Diffuse Texture...\n");
+		core::Path::pushDir();
+		std::string path = core::Path::getSaveFileName("Materials (.mat)\0*.mat\0\0");
+		path = core::Path::pushExt("mat", path);
+		core::Path::popDir();
+		if (!Controller::get().storage().material.save(path.c_str(), core::Path::getHomeDir().c_str()))
+			core::Debug::print("Error occured while trying to save material\n");
+	}));
+
 	setControlColors();
 }
 
