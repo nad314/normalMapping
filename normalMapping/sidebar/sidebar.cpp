@@ -64,8 +64,6 @@ void Sidebar::onOpened() {
 	}));
 
 	push(saveButton.make(core::vec4i(2, bsize + 52, App::Theme::sidebarWidth - 10, bsize + 72), "Save Material", *this, [](core::Form& f)->void {
-		core::Debug::print("Cleared Images\n");
-		core::Debug::print("Loading Diffuse Texture...\n");
 		core::Path::pushDir();
 		std::string path = core::Path::getSaveFileName("Materials (.mat)\0*.mat\0\0");
 		path = core::Path::pushExt("mat", path);
@@ -73,6 +71,27 @@ void Sidebar::onOpened() {
 		if (!Controller::get().storage().material.save(path.c_str(), core::Path::getHomeDir().c_str()))
 			core::Debug::print("Error occured while trying to save material\n");
 	}));
+
+	push(loadButton.make(core::vec4i(2, bsize + 74, App::Theme::sidebarWidth - 10, bsize + 94), "Open Material", *this, [](core::Form& f)->void {
+		core::Path::pushDir();
+		std::string path = core::Path::getOpenFileName("Materials (.mat)\0*.mat\0\0");
+		core::Path::popDir();
+		Storage& data = Controller::get().storage();
+		if (!data.material.load(path.c_str(), core::Path::getHomeDir().c_str()))
+			core::Debug::print("Error occured while trying to open material\n");
+		data.material.genMipmaps();
+		Controller::get().invalidate();
+		Sidebar& p = dynamic_cast<Sidebar&>(f);
+		if (!p) return;
+		p.sizeSlider.setPos((1.0f - log(data.material.scale.x) / log(0.5f)) / 2.0f);
+		data.material.diffuse.construct(p.difImage);
+		p.adjustImage(p.difImage, p.difImage);
+		data.material.normal.construct(p.norImage);
+		p.adjustImage(p.norImage, p.norImage);
+		p.difButton.setImage(&p.difImage);
+		p.norButton.setImage(&p.norImage);
+	}));
+
 
 	setControlColors();
 }

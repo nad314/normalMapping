@@ -12,6 +12,7 @@ public:
 	core::Button clearButton;
 	core::Slider sizeSlider;
 	core::Button saveButton;
+	core::Button loadButton;
 
 	char difPath[256];
 	char norPath[256];
