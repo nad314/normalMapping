@@ -10,6 +10,7 @@ public:
 	core::ImageButton norButton; //normal texture load
 	core::ImageButton relButton; //reload textures
 	core::Button clearButton;
+	core::Slider sizeSlider;
 
 	char difPath[256];
 	char norPath[256];

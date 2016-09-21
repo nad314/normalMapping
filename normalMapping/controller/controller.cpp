@@ -40,12 +40,13 @@ void Controller::drawScene() {
 	glEnable(GL_DEPTH_TEST);
 	data.shader.start();
 	glExt::activeTexture(GL_TEXTURE0);
-	data.diffuse.bind();
+	data.material.diffuse.bind();
 	glExt::activeTexture(GL_TEXTURE1);
-	data.normal.bind();
+	data.material.normal.bind();
 	data.view.sendTo(data.shader, "modelview", "projection");
 	glExt::uniform1i(glExt::getUniformLocation(data.shader, "diffuseMap"), 0);
 	glExt::uniform1i(glExt::getUniformLocation(data.shader, "normalMap"), 1);
+	glExt::uniform1f(glExt::getUniformLocation(data.shader, "scale"), data.material.scale.x);
 	data.model.drawTris();
 	data.shader.stop();
 	core::glTexture::unbind();
@@ -68,9 +69,9 @@ void Controller::clearTextures() {
 	core::Image img;
 	img.make(128, 128, 32);
 	core::Core2D::clearImage(img, core::Color(255));
-	data.diffuse.make(img);
+	data.material.diffuse.make(img);
 	core::Core2D::clearImage(img, core::Color(128, 128, 255, 255));
-	data.normal.make(img);
+	data.material.normal.make(img);
 }
 
 void Controller::makeImage(core::glTexture& texture, core::Image& image) {

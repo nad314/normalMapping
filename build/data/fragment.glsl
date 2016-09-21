@@ -14,12 +14,13 @@ out vec4 fragColor;
 
 uniform sampler2D diffuseMap;
 uniform sampler2D normalMap;
+uniform float scale;
 
 void main(void) {
-	vec3 lightDir = normalize(vec3(0.5f, 0.5f, -3.0f)-vIn.pos.xyz);
+	vec3 lightDir = normalize(vec3(0.5f, 0.5f, 0.0f)-vIn.pos.xyz);
 	mat3 tsm = mat3(normalize(matIn.tan), normalize(matIn.btan), normalize(matIn.nor));
-	vec3 color = texture2D(diffuseMap, vIn.tex).xyz;
-	vec3 normal = texture2D(normalMap, vIn.tex).xyz*2.0 - 1.0;
+	vec3 color = texture2D(diffuseMap, vIn.tex*scale).xyz;
+	vec3 normal = texture2D(normalMap, vIn.tex*scale).xyz*2.0 - 1.0;
 	normal = tsm*normalize(normal);
 	float diff = dot(normal, lightDir)*.7;
 	float specular = pow(clamp(dot(reflect(-lightDir, normal), (-vIn.pos.xyz)), 0.0, 1.0), 4.0)*.05;

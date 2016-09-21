@@ -31,7 +31,7 @@ void Sidebar::loadDifImage(const char* path) {
 	if (!difImage.loadPng(path))
 		core::Debug::print("Couldn't load image\n");
 	else {
-		Controller::get().makeImage(Controller::get().storage().diffuse,difImage);
+		Controller::get().makeImage(Controller::get().storage().material.diffuse,difImage);
 		Controller::get().invalidate();
 		adjustImage(difImage, difImage);
 		difButton.setImage(&difImage);
@@ -44,7 +44,7 @@ void Sidebar::loadNorImage(const char* path) {
 	if (!norImage.loadPng(path))
 		core::Debug::print("Couldn't load image\n");
 	else {
-		Controller::get().makeImage(Controller::get().storage().normal, norImage);
+		Controller::get().makeImage(Controller::get().storage().material.normal, norImage);
 		Controller::get().invalidate();
 		adjustImage(norImage, norImage);
 		norButton.setImage(&norImage);

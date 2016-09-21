@@ -55,6 +55,14 @@ void Sidebar::onOpened() {
 		core::Debug::print("Cleared Images\n");
 	}));
 
+	push(sizeSlider.make(core::vec4i(2, bsize + 28, App::Theme::sidebarWidth - 10, bsize + 48), 1, *this, [](float pos, core::Form& f)->void {
+		float scale = pow(0.5f, (0.5f - pos) * 2);
+		Storage& data = Controller::get().storage();
+		data.material.scale = core::vec2(scale, scale);
+		Controller::invalidate();
+		core::Debug::print("Texture Scale: %.2f%c\n", scale, '%');
+	}));
+
 	setControlColors();
 }
 
