@@ -10,6 +10,7 @@ public:
 	void onOpened() override;
 
 	int onResize(const core::eventInfo& e) override;
+	int onGetMinMaxInfo(const core::eventInfo& e) override;
 	void onEndPaint(const core::eventInfo& e) override;
 	void reshape();
 

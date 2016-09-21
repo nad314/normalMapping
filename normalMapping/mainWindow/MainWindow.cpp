@@ -34,6 +34,13 @@ int MainWindow::onResize(const core::eventInfo& e) {
 	return e;
 }
 
+int MainWindow::onGetMinMaxInfo(const core::eventInfo& e) {
+	LPMINMAXINFO lpMMI = (LPMINMAXINFO)e.lP;
+	lpMMI->ptMinTrackSize.x = 640;
+	lpMMI->ptMinTrackSize.y = 480;
+	return e;
+}
+
 void MainWindow::reshape() {
 	//MoveWindow(renderWindow.hWnd, 6, 40, width - 12, height - 46, false);
 	SetWindowPos(renderWindow, NULL, 8, 40, width - 16 - App::Theme::sidebarWidth, height - 46 - 24, SWP_NOCOPYBITS|SWP_DEFERERASE|SWP_NOSENDCHANGING);

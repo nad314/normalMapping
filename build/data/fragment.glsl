@@ -22,7 +22,7 @@ void main(void) {
 	vec3 color = texture2D(diffuseMap, vIn.tex*scale).xyz;
 	vec3 normal = texture2D(normalMap, vIn.tex*scale).xyz*2.0 - 1.0;
 	normal = tsm*normalize(normal);
-	float diff = dot(normal, lightDir)*.7;
+	float diff = dot(normal, lightDir)*.8;
 	float specular = pow(clamp(dot(reflect(-lightDir, normal), (-vIn.pos.xyz)), 0.0, 1.0), 4.0)*.05;
 	if (diff < 0.0)
 		specular = 0;

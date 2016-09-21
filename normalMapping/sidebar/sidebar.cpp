@@ -60,7 +60,7 @@ void Sidebar::onOpened() {
 		Storage& data = Controller::get().storage();
 		data.material.scale = core::vec2(scale, scale);
 		Controller::invalidate();
-		core::Debug::print("Texture Scale: %.2f%c\n", scale, '%');
+		core::Debug::print("Texture Scale: %.2f\n", scale);
 	}));
 
 	setControlColors();
